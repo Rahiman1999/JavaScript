@@ -2,6 +2,7 @@
 // <---------------Easy----------------->
 
 // 01.power function
+
 function power(a, b) {
   console.log(Math.pow(a, b));
 }
@@ -139,7 +140,7 @@ function sortArray(num) {
 }
 sortArray([100, 83, 32, 9, 45, 61]);
 
-// Reverse Character function
+//  04.Reverse Character function
 function reveseString(string) {
   return string.split("").reverse().join("").split(" ").reverse().join(" ");
 }
