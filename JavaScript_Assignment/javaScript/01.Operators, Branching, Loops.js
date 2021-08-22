@@ -123,7 +123,7 @@ for (let i = 2; i <= input; i++) {
   }
 }
 
-// 13.WeedDays
+// 13.WeekDays
 
 let input = prompt("Enter a day");
 const input1 = input.toLowerCase();

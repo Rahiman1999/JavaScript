@@ -81,7 +81,7 @@ for (let i of input) {
 }
 console.log("The sum of all digit: " + sum_2);
 
-// 10.everse Number
+// 10.reverse Number
 
 const input_1 = Number(prompt("enter the number to reverse"));
 const i = input_1 + " ";
