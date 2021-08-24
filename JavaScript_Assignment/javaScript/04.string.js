@@ -236,7 +236,6 @@ console.log(repeated);
 
 
 
-
 // 04. A program to toggle case of each character of the string to uppercase
 
 const str_3 = prompt("enter the string");
@@ -246,12 +245,10 @@ for (let i = 0; i <= s.length - 1; i++) {
   if (i % 2 !== 0) {
     uc += s[i].toUpperCase();
   } else {
-    uc += s[i];
+    uc += s[i].toLowerCase();
   }
 }
 console.log(uc);
-
-
 
 // 05.program that removes the occurrence of the specified word from given sentence.
 
