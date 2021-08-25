@@ -225,6 +225,7 @@ console.log(removedSpace.join(""));
 
 const str = prompt("Enter the string to calculate the repeated character");
 const repeated = {};
+const value = 1;
 for (let i = 0; i <= str.length - 1; i++) {
   if (repeated[str[i]]) {
     repeated[str[i]]++;
@@ -232,8 +233,18 @@ for (let i = 0; i <= str.length - 1; i++) {
     repeated[str[i]] = 1;
   }
 }
-console.log(repeated);
 
+for (let [key, values] in repeated) {
+  if (repeated[key] > value) {
+    console.log(
+      "the repeated word is: " +
+        key +
+        " it repeated " +
+        repeated[key] +
+        " times"
+    );
+  }
+}
 
 
 // 04. A program to toggle case of each character of the string to uppercase
