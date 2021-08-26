@@ -1,3 +1,4 @@
+/*
 // 01.Object of syudent mark
 
 const studentDetails = [
@@ -276,3 +277,5 @@ console.log(`the total discounted value is: ${totalDiscountedValues}`);
 
 const tax = cartValues * (18 / 100);
 console.log(`The total tax amount of cart values is: ${tax}`);
+
+*/
