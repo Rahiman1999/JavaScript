@@ -1,4 +1,3 @@
-/*
 // 01.Object of syudent mark
 
 const studentDetails = [
@@ -129,6 +128,8 @@ const res = studentDetails.filter((student) => {
 
 // .................................02.Salary calculation using OOPS concept.....................................................................
 
+// Create a Class using ES6 in JavaScript named Employee and assign necessary data members and methods such as name, id, basic salary, HRA, Allowances; define getSalary method which will return the net salary.
+
 class Employee {
   constructor(name, id, basicSalary, HRA, Allowances) {
     this.name = name;
@@ -137,11 +138,15 @@ class Employee {
     this.HRA = HRA;
     this.Allowances = Allowances;
   }
+
+  // Call the getSalary method of each instance and return the net salary based on your computation.
   getSalary() {
     const netSalary = this.basicSalary + this.HRA + this.Allowances;
     return `The Net salary of ${this.name} is: ${netSalary}`;
   }
 }
+
+// Create two Instances of Employee with all necessary details.
 
 const dataMember_1 = new Employee("Rahiman", 12345, 50000, 10000, 5000);
 const dataMember_2 = new Employee("Ajay", 23456, 40000, 10000, 8000);
@@ -271,4 +276,3 @@ console.log(`the total discounted value is: ${totalDiscountedValues}`);
 
 const tax = cartValues * (18 / 100);
 console.log(`The total tax amount of cart values is: ${tax}`);
-*/
