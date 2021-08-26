@@ -1,3 +1,4 @@
+/*
 // 01.Object of syudent mark
 
 const studentDetails = [
@@ -80,14 +81,14 @@ for (let i = 0; i <= studentDetails.length - 1; i++) {
 console.log(`The lowest score is: ${lowestScore} and name is: ${name2} `);
 
 // ..........................................Print the average marks of the class in computer subject..............................................
-let computerAvg = 0;
-for (let i = 0; i < studentDetails.length; i++) {
-  computerAvg += studentDetails[i].computer;
-}
+const computerAvg =
+  studentDetails.reduce(
+    (acc, studentDetails) => acc + studentDetails.computer,
+    0
+  ) / studentDetails.length;
+
 console.log(
-  `The average mark of the class in computer subject is: ${
-    computerAvg / studentDetails.length
-  }`
+  `The average mark of the class in computer subject is: ${computerAvg}`
 );
 
 // ...........................................Print the grades of all students...................................................................
@@ -126,15 +127,148 @@ const res = studentDetails.filter((student) => {
   }
 });
 
-const Employee = [
+// .................................02.Salary calculation using OOPS concept.....................................................................
+
+class Employee {
+  constructor(name, id, basicSalary, HRA, Allowances) {
+    this.name = name;
+    this.id = id;
+    this.basicSalary = basicSalary;
+    this.HRA = HRA;
+    this.Allowances = Allowances;
+  }
+  getSalary() {
+    const netSalary = this.basicSalary + this.HRA + this.Allowances;
+    return `The Net salary of ${this.name} is: ${netSalary}`;
+  }
+}
+
+const dataMember_1 = new Employee("Rahiman", 12345, 50000, 10000, 5000);
+const dataMember_2 = new Employee("Ajay", 23456, 40000, 10000, 8000);
+const dataMember_3 = new Employee("Ranganath", 156475, 80000, 15000, 60000);
+console.log(dataMember_1.getSalary());
+console.log(dataMember_2.getSalary());
+console.log(dataMember_3.getSalary());
+
+//  ...................................03.Bank Account (Object Oriented Programming in JavaScript)...........................................
+
+// Create a class and define data members such as name, bank account number,account balance, account type, ifsc and name it as BankAccount.
+
+var bankAccountDetails = [];
+
+class BankAccount {
+  constructor(name, bankAccountNumber, accountBalance, accountType, ifsc) {
+    this.name = name;
+    this.bankAccountNumber = bankAccountNumber;
+    this.accountBalance = accountBalance;
+    this.accountType = accountType;
+    this.ifsc = ifsc;
+    bankAccountDetails.push(this);
+  }
+}
+
+// Create three Instances(three customers) of BankAccount with all necessary details.
+
+const member_1 = new BankAccount(
+  "Rahiman",
+  1234567890,
+  25000,
+  "savings",
+  "ODI789789"
+);
+const member_2 = new BankAccount(
+  "Ranganath",
+  4567891230,
+  50000,
+  "current",
+  "ODI546456"
+);
+const member_3 = new BankAccount(
+  "PK",
+  8529637410,
+  100000,
+  "current",
+  "ODI856568"
+);
+
+// Print the name of customers and their account balances.
+
+bankAccountDetails.map((e) => {
+  console.log(
+    `The Bank account holder name is ${e.name} and Account balance is: ${e.accountBalance}`
+  );
+});
+
+// Calculate the average account balance from all the instances.
+
+const avgAccountBalance =
+  bankAccountDetails.reduce(
+    (acc, bankAccountDetails) => acc + bankAccountDetails.accountBalance,
+    0
+  ) / bankAccountDetails.length;
+
+console.log(
+  `the average account balance from all the instances is: ${Math.round(
+    avgAccountBalance
+  )}`
+);
+
+// .......................................04.Given an array of objects of items in cart, print...................................................
+
+const cartItems = [
   {
-    name: "Rahiman",
-    id: 1234567,
-    basicSalary: 50000,
-    HRA: 10000,
-    Allowances: 5000,
-    grossSalary: {},
+    id: "101",
+    name: "Oreo",
+    count: 2,
+    price: 30.0,
+    discount: 0.18,
+  },
+  {
+    id: "102",
+    name: "Red Bull",
+    count: 1,
+    price: 99.0,
+    discount: 0.15,
+  },
+  {
+    id: "103",
+    name: "Dairy Milk Silk",
+    count: 3,
+    price: 175.0,
+    discount: 0.05,
+  },
+  {
+    id: "104",
+    name: "Pulse Candy Pack",
+    count: 1,
+    price: 135.0,
+    discount: 0.2,
   },
 ];
 
-console.log(Employee.grossSalary);
+// the total No. of items
+
+console.log(`The total number of items is: ${cartItems.length}`);
+
+// the total cart value
+
+const cartValues = cartItems.reduce(
+  (acc, cartItems) => acc + cartItems.price,
+  0
+);
+console.log(`The total cart value is: ${cartValues}`);
+
+// the total discounted value(sum of dicounted values on each item) based on the given discount
+
+const totalDiscountedValues = cartItems.reduce(
+  (accu, cartItems) => accu + cartItems.discount,
+  0
+);
+
+console.log(`the total discounted value is: ${totalDiscountedValues}`);
+
+//  total tax amount (18% tax, calculated on total cart value)
+
+const tax = cartValues * (18 / 100);
+console.log(`The total tax amount of cart values is: ${tax}`);
+*/
